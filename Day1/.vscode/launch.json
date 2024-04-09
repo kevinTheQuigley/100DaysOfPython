@@ -10,7 +10,7 @@
             "request": "launch",
             "program": "${file}",
             "console": "integratedTerminal",
-            "args":["yo","heck"],
+            //"args":["yo","heck"],
             "cwd": "${workspaceRoot}",
             "env": {"name":"value"}
         }
