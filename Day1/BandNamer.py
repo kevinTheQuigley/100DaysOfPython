@@ -11,9 +11,8 @@
 import sys
 
 # Extracting command-line arguments
-name_input = sys.argv[1] if len(sys.argv) > 1 else input("Please enter your name: ")
-age_input = sys.argv[2] if len(sys.argv) > 2 else input("Please enter your age: ")
+city_input = sys.argv[1] if len(sys.argv) > 1 else input("Please enter the city where you were born:\n ")
+pet_input = sys.argv[2] if len(sys.argv) > 2 else input("Please enter your pets name:\n ")
 
 # Printing the inputs
-print("Name:", name_input)
-print("Age:", age_input)
+print("Your bands name will be "+city_input+"'s "+pet_input+"s")
