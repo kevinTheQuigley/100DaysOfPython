@@ -12,5 +12,7 @@ totalBill = int(bill)+int(bill)*float(tip)/100
 
 perPerson = totalBill/int(people)
 
-print(f"The total amount per person is ${perPerson} per person.")
+perPersonRounded = "%.2f" % perPerson
+
+print(f"The total amount per person is ${perPersonRounded} per person.")
 
