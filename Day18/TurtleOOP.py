@@ -45,7 +45,7 @@ tim.color("green")
 
 #extract("image.jpg",20)
 screen = Screen()
-colors = extract("C:/Users/kevin/OneDrive/Desktop/100DaysOfPython/Day18/image.jpg",10)
+colors = extract("C:/Users/kevin/OneDrive/Desktop/100DaysOfPython/Day18/image.jpg",20)
 screen.colormode(255)
 cList = []
 for color in colors:
@@ -54,16 +54,17 @@ for color in colors:
     b = int(color.rgb.b)
     cList.append((r,g,b))
 print(cList)
+cList = cList[4:]
 
 tim.speed("fastest")
 for i in range(20):   
     for i in range(20):
         tup = rd.choice(cList)
         tim.pencolor(tup)
+        tim.pendown()
         tim.dot(10)
         tim.penup()
         tim.forward(20)
-        tim.pendown()
     tim.left(90)
     tim.forward(20)
     tim.left(90)
