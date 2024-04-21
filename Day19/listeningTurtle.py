@@ -21,10 +21,14 @@ for color in  colors:
     startingPosition[1] = startingPosition[1]+50
     turtleList.append(newTurtle)
 
+def turnLeft:
+
+
 gameOn = True
 
 while gameOn:
     for turtle in turtleList:
+        if turtle = turtleList[0]
         turtle.forward(randint(10,20))
         if turtle.position()[0]>150:
             gameOn = False
