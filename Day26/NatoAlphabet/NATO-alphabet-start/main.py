@@ -20,17 +20,24 @@ import pandas as pd
 # Keyword Method with iterrows()
 # {new_key:new_value for (index, row) in df.iterrows()}
 
-#TODO 1. Create a dictionary in this format:
+#1. Create a dictionary in this format:
 {"A": "Alfa", "B": "Bravo"}
 
 #Globals
-NATO_CSV
+NATO_CSV = "nato_phonetic_alphabet.csv"
 
 nato_df = pd.read_csv(NATO_CSV)
 
-nato_dict = {nato_df.letter:nato_df.code for (index,row) in nato_df.iterrows()}
+nato_dict = {row.letter:row.code for (index,row) in nato_df.iterrows()}
 
-print(nato_dict("a"))
+#print(nato_dict)
+#
+#print(nato_dict['A'])
 
 #TODO 2. Create a list of the phonetic code words from a word that the user inputs.
 
+word_input = input("Please give me a word to convert to phonetic spelling")
+
+word_list = [nato_dict[letter.upper()] for letter in word_input]
+
+print(word_list)
