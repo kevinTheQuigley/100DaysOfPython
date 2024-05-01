@@ -29,7 +29,9 @@ def add_new_password():
     site= website_input.get()
     email = email_input.get()
     password = password_input.get()
-    new_row = site + " | " + email  + " | " + password 
+    new_row = site + " | " + email  + " | " + password  + "\n"
+    website_input.delete(0,'end')   
+    password_input.delete(0,'end')   
     with open (FILE_NAME,"a") as file:
         file.write(new_row)
 
