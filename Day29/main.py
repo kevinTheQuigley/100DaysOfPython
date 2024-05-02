@@ -1,4 +1,6 @@
 from tkinter import *
+from tkinter import messagebox
+import pyperclip
 
 # ---------------------------- GLOBALS ------------------------------- #
 IMAGE_LOCATION = "./logo.png"
@@ -29,11 +31,19 @@ def add_new_password():
     site= website_input.get()
     email = email_input.get()
     password = password_input.get()
+
+    is_ok = messagebox.askokcancel(title = site ,message = f"Site: {site}\nPassword: {password} \nSave result?")
     new_row = site + " | " + email  + " | " + password  + "\n"
-    website_input.delete(0,'end')   
-    password_input.delete(0,'end')   
-    with open (FILE_NAME,"a") as file:
-        file.write(new_row)
+    print(len(password))
+    if len(password) == 0 or len(site) == 0:
+        messagebox.info(title = "empty box", message = "Please fill in the password")
+    else:
+        if is_ok:
+            pyperclip.copy(password)
+            with open (FILE_NAME,"a") as file:
+                file.write(new_row)
+            website_input.delete(0,'end')   
+            password_input.delete(0,'end')   
 
 
 # ---------------------------- UI SETUP ------------------------------- #
