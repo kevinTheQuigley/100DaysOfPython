@@ -61,3 +61,11 @@ parameters = {
 #        "text": "This is a WhatsApp text message sent using the Vonage Messages API",
 #    }
 #)
+
+# Specify the phone number (with country code) and the message
+import pywhatkit as kit
+phone_number = "+353860569107"
+message = "Hello from Python! This is an instant WhatsApp message."
+
+# Send the message instantly
+kit.sendwhatmsg_instantly(phone_number, message,13, 12, 1)
