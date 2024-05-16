@@ -1,0 +1,14 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {           
+            "env": {
+                "NODE_ENV": "development",
+                "NUTRI_APP_ID":"0c3405a9",
+                "NUTRI_APP_KEY":"33f5171e71c41b84b745650deaa859e0",
+                "SHEETY_AUTH":"Basic a2V2aW5UaGVRdWlnbGV5OnF3ZXJmYWRwb2lnbmdwb2lhZGZ1dmFzZGY=",
+                "SHEETY_CODE":"7578b074a021d96b936b9161968196fb"
+            }
+        }
+    ]
+}
