@@ -1,4 +1,3 @@
-from arsewards import arsewards_dict
 import requests
 from datetime import datetime
 import os
@@ -15,10 +14,11 @@ sheety_code  = os.environ.get("SHEETY_CODE","Sorry, that needs to be added")
 print(nutri_app_id)
 
 
+workout = input("What exercise did you do today?!")
 nutri_endpoint = "https://trackapi.nutritionix.com/v2/natural/exercise"
 
 nutri_params = {
-    "query":"cycled for 30 minutes"
+    "query":workout
 }
 
 headers = {
@@ -26,6 +26,7 @@ headers = {
     "x-app-id":nutri_app_id,
     "x-app-key":nutri_app_key,
 }
+
 #Creating the nutri
 response = requests.post(url = nutri_endpoint,json = nutri_params,headers = headers)
 print(response.text)
