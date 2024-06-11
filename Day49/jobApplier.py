@@ -1,9 +1,9 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options as ChromeOptions
 from webdriver_manager.chrome import ChromeDriverManager
+from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
-from selenium.common.exceptions import NoSuchElementException
 import random as rd
 import time
 from arsewards import arsewards_dict
@@ -14,9 +14,9 @@ driver = webdriver.Chrome(options=options)
 
 #chrome_options = Options()
 #chrome_options.add_experimental_option("detach", True)
-driver = webdriver.Chrome(options=options)
 #driver = webdriver.Chrome(ChromeDriverManager().install(),options=options)
 driver.get("https://www.linkedin.com/jobs/search/?currentJobId=3947031289&distance=25&geoId=102837144&keywords=python%20developer&origin=JOBS_HOME_KEYWORD_HISTORY&refresh=true")
+driver.maximize_window()
 nav_button = driver.find_element(By.CSS_SELECTOR, ".nav__button-secondary")
 nav_button.click()
 
@@ -64,6 +64,14 @@ for i in range(len(job_list)):
         next_button=  driver.find_element(By.CSS_SELECTOR, ".artdeco-button--primary")
         next_button.click()
         time.sleep(2)
+        questionList = driver.find_elements(By.CSS_SELECTOR, ".jobs-easy-apply-form-section__grouping")
+        for element in questionList:
+            label = element.find_elements(By.CSS_SELECTOR,".artdeco-text-input--container label")
+            text = label.text
+            print("text")
+            inputBox = element.find_element(By.CSS_SELECTOR, ".*input")
+            inputBox[0].send_keys("Biggest Baddie")
+
         
 
     except NoSuchElementException:
