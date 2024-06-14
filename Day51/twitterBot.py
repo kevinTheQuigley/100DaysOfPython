@@ -4,6 +4,7 @@ from selenium.webdriver.chrome.options import Options as ChromeOptions
 from arsewards import arsewards_dict
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
+import speedGetter
 
 options = ChromeOptions()
 options.add_experimental_option("detach", True)
@@ -30,13 +31,16 @@ class TwitterBot():
         self.down = down
     
     def getInternetSpeed(self):
+        (self.realDown,self.realUp) = speedGetter.getInternetSpeed()
         
 
     def tweet_at_provider(self):
-        pass
+        if (self.realDown< self.down or self.realUp < self.up):
+            self.driver.get("https://twitter.com/compose/tweet")
 
 
-tweeter = TwitterBot(50,150)
+tweeter = TwitterBot
+(50,150)
 
 time.sleep(5)
 
