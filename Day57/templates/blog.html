@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang = "en">
+<header>
+    <title> Bringin the sickest news to you</title>
+</header>
+
+<body>
+    {% for blogPost in blogs: %}
+        {% if blogPost['id']==2: %}
+            <h1>{{ blogPost['title'] }}</h1>
+            <h2>{{ blogPost['subtitle'] }}</h2>
+        {% endif %}
+    {% endfor %}
+</body>
+
+
+
+
+
+
+
+</html>
